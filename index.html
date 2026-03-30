@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Interface Editável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">Carpa diem</div>
+
+    <div class="content">
+
+        <div class="editable-block">
+            <input type="text" class="block-title" placeholder="Título">
+            <textarea class="block-content" placeholder="Tarefabc content"></textarea>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <button onclick="addBlock()">Adicionar</button>
+    </div>
+
+</div>
+
+<script>
+function addBlock() {
+    const content = document.querySelector('.content');
+
+    const block = document.createElement('div');
+    block.classList.add('editable-block');
+
+    block.innerHTML = `
+        <input type="text" class="block-title" placeholder="1 2 3">
+        <textarea class="block-content" placeholder="fazer checklist sla"></textarea>
+    `;
+
+    content.appendChild(block);
+}
+</script>
+
+</body>
+</html>
